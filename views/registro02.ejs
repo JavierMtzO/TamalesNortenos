@@ -57,6 +57,7 @@
         <span style="color: red;"> <%- error %></span>
         <% }%>
         <form class="form-group" action="registro02" method="POST">
+            <input type='hidden' name='_csrf' value='<%= csrfToken %>'>
             <div class="d-flex justify-content-around align-items-center tamales-usuarioNoRegistrado-02-formulario">
                 <div class="tamales-usuarioNoRegistrado-02-formulario-left">
                     <label for="nombre"> Nombre </label>
@@ -85,7 +86,7 @@
                     <div class="tamales-usuarioNoRegistrado-02-formulario-box">
                         <select class="form-control" name="colonia" required>
                             <% for (let colonia of distribuciones) {%>
-                            <option value="<%= colonia.nombreDeColonia %>"> <%= colonia.nombreDeColonia %></option>
+                            <option value="<%= colonia.idDistribucion %>"> <%= colonia.nombreDeColonia %></option>
                             <% }%>
                         </select>
                     </div>
